@@ -15,7 +15,7 @@ def home():
 @app.route('/predict',methods=['POST'])
 def predict():
     one = ['yes', 'present', 'good', 'normal', 'Yes', 'Present', 'Good', 'Normal', 'YES', 'PRESENT', 'GOOD', 'NORMAL']
-    zero = ['no', 'notpresent', 'poor', 'abnormal', 'No', 'Notpresent', 'NotPresent', 'Poor', 'Abnormal', 'AbNormal', 'NO', 'NOTPRESENT', 'POOR', 'ABNORMAL']
+    zero = ['no', 'notpresent', 'not present', 'poor', 'abnormal', 'No', 'Notpresent', 'NotPresent', 'Not Present', 'Poor', 'Abnormal', 'AbNormal', 'NO', 'NOTPRESENT', 'NOT PRESENT', 'POOR', 'ABNORMAL']
     int_features = []
     for i in request.form.values():
         if i in one:
