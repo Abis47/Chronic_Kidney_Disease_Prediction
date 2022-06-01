@@ -19,13 +19,10 @@
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
       <input type="text" name="age" placeholder="Age" required="required" >
-        <input type="text" name="sg" placeholder="Specific Gravity" required="required" >
-        <input type="text" name="pcv" placeholder="Packed Cell Volume" required="required" >
-	    <input type="text" name="bp" placeholder="Blood Pressure in mm/Hg" required="required" >
+        <input type="text" name="bp" placeholder="Blood Pressure in mm/Hg" required="required" >
         <input type="text" name="bu" placeholder="Blood Urea(mgs/dl)" required="required" >
 		<input type="text" name="sc" placeholder="Serum Creatinine(mgs/dl)" required="required" >
 		<input type="text" name="sod" placeholder="Sodium(mEq/L)" required="required" >
-		<input type="text" name="pot" placeholder="Potassium(mEq/L)" required="required" >
 		<input type="text" name="hemo" placeholder="Hemoglobin(gms)" required="required" >
 		<input type="text" name="wc" placeholder="White Blood Cell Count(cells/cumm)" required="required" >
 		<input type="text" name="rc" placeholder="Red Blood Cell Count(millions/cmm)" required="required" >

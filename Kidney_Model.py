@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder, MinMaxScaler
+from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.ensemble import RandomForestClassifier
 
 df = pd.read_csv("kidney.csv")
@@ -14,7 +14,7 @@ df.fillna(method='bfill', inplace=True)
 
 df[['pcv', 'wc', 'rc']] = df[['pcv', 'wc', 'rc']].astype('float64')
 
-df.drop('id',axis=1,inplace=True)
+df.drop(['id', 'sg', 'pcv', 'pot'],axis=1,inplace=True)
 
 col = ['rbc', 'pcc', 'pc', 'ba', 'htn', 'dm', 'cad', 'pe', 'ane']
 encoder = LabelEncoder()
@@ -27,7 +27,7 @@ df[['classification', 'appet']] = df[['classification', 'appet']].astype('int64'
 X = df.drop("classification", axis=1)
 y = df["classification"]
 
-scaler = MinMaxScaler()
+scaler = StandardScaler()
 features = scaler.fit_transform(X)
 
 x_train, x_test, y_train, y_test = train_test_split(features, y, test_size=0.3, random_state=42) 
